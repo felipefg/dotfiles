@@ -1,0 +1,3 @@
+[submodule "py_dotfiles"]
+	path = py_dotfiles
+	url = git@github.com:jbernard/dotfiles.git

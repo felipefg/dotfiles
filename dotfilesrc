@@ -1,0 +1,12 @@
+[dotfiles]
+
+repository=~/.dotfiles
+ignore = [
+    '.git',
+    '.gitignore',
+    '.gitmodules',
+    'py_dotfiles',
+    '*.swp',
+    '*~'
+    ]
+

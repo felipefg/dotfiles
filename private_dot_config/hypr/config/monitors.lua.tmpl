@@ -1,0 +1,24 @@
+-- Managed by a chezmoi template. Use chezmoi edit to edit this file.
+
+{{- if eq .chezmoi.hostname "ironforge" }}
+-- ironforge-specific configuration.
+hl.monitor({
+  output = "eDP-1",
+  mode = "2560x1600@240",
+  position = "0x0",
+  scale = 1.07,
+})
+{{- end }}
+{{- if eq .chezmoi.hostname "blackrock" }}
+-- blackrock-specific configuration.
+hl.monitor({
+  output = "HDMI-A-1",
+  mode = "preferred",
+  position = "0x0",
+})
+hl.monitor({
+  output = "DP-1",
+  mode = "preferred",
+  position = "auto-right",
+})
+{{- end }}

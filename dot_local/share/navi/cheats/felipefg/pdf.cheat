@@ -1,0 +1,8 @@
+% pdf, print, duplex, pdftk
+
+# Manual duplex: separate even in reverse order and odd pages
+pdftk "<input>" cat end-1even output "<evens_out>" && pdftk "<input>" cat 1-endodd output "<odds_out>"
+
+$ input: ls *.pdf
+$ evens_out: echo "${input%.pdf}_evens_rev.pdf"
+$ odds_out: echo "${input%.pdf}_odds.pdf"

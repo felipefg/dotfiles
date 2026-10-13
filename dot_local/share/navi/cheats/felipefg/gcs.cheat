@@ -1,0 +1,6 @@
+% gcs, twist
+
+
+## Compute engine access
+# Access to crawler-sp-1
+gcloud compute ssh --zone=southamerica-east1-b crawler-sp-1

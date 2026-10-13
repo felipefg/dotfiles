@@ -1,0 +1,18 @@
+% general
+
+
+## Cheats
+# edit cheats
+nvim $HOME/.local/share/navi/cheats/
+
+% cookiecutter, flux, cd
+
+# Flux deployment cookiecutter
+uvx cookiecutter git+ssh://git@bitbucket.org/twistsystems/flux-deployment-cookiecutter.git
+
+# Deployment repo cookiecutter
+uvx cookiecutter git+ssh://git@bitbucket.org/twistsystems/deployment-repo-cookiecutter.git
+
+% uv, venv, dropbox
+# setup venv in dropbox folder
+mkdir .venv && attr -s com.dropbox.ignored -V 1 .venv

@@ -1,0 +1,17 @@
+% kubernetes, k8s
+
+
+# Set up port forwarding for a service
+while true; do kubectl port-forward svc/<service-name> <local-port>:<service-port>; date; echo Reconnecting; sleep 1; done
+
+
+% gcloud, gke, workload-identity
+
+# Bind a GCP IAM service account to a Kubernetes service account (Workload Identity)
+gcloud iam service-accounts add-iam-policy-binding <iam_sa> \
+    --role roles/iam.workloadIdentityUser \
+    --member "serviceAccount:twistsystems.svc.id.goog[<k8s_namespace>/<k8s_sa>]"
+
+$ k8s_namespace: kubectl get namespaces --no-headers -o custom-columns=":metadata.name"
+$ k8s_sa: kubectl get serviceaccounts -n <k8s_namespace> --no-headers -o custom-columns=":metadata.name"
+$ iam_sa: kubectl get serviceaccount <k8s_sa> -n <k8s_namespace> -o jsonpath='{.metadata.annotations.iam\.gke\.io/gcp-service-account}'
